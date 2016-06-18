@@ -6,7 +6,7 @@
 |     - feedback polynomial : x^8 + x^6 + x^5 + x^4 +1
 |     - look about LFSR! : Wikipedia or Xilinx Efficient Shift Registers, LFSR...
 |---------------------------------------------------------------------------------
-| Created by mori : mori@lalsie.ist.hokudai.ac.jp
+| Created by : 
 \===============================================================================*/
 
 module lsfr_eight(MCLK, MRST_N,SEED, LSFR_OUT);
