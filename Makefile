@@ -1,6 +1,9 @@
 SIM_DIR=SIM0
 
-vsim:
+nogui:
+	cd ./TBENCH/${SIM_DIR}; \
+	../../SCRIPT/run_msim.sh $(SIM_DIR) -nogui
+gui:
 	cd ./TBENCH/${SIM_DIR}; \
 	../../SCRIPT/run_msim.sh $(SIM_DIR) -gui
 icarus:

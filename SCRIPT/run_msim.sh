@@ -23,12 +23,14 @@ if [ ! -e ./work ]; then
     vlib ./work 
 fi
 
+    #-sv \
+    #-v \
 
 # compile
 vlog \
+    -work work \
     +notimingchecks \
-    -sv \
-    -y ${RTL_DIR} \
+    -v ${RTL_DIR}/* \
     +incdir+${RTL_DIR}/+ \
     +libext+.v+ \
     ${sim_file}
@@ -36,14 +38,13 @@ vlog \
 # simulation
 if [ "$2" = "-nogui" ]; then 
 ## if you use on CUI
-vsim -c -keepstdout test_module 
-# run -all
+vsim -c -keepstdout tbench -do "radix -hexadecimal; log -r /*; run -all; finish"
+#fi
 #vsim -c -keepstdout test_module <<EOF
-#EOF
 elif [ "$2" = "-gui" ]; then
 ## if you use on GUI
 #vsim -gui test_module <<EOF
-vsim -gui test_module 
+vsim -gui tbench
 # run -all
 #EOF
 else

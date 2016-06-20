@@ -12,7 +12,8 @@ module tbench;
         @(posedge CLK) #DELAY;
             set_seed(8'h15);
         /* @(posedge CLK); */
-        #(100 * CYCLE)    $finish();
+        #(100 * CYCLE)    $display("Simulaton done");
+        $finish;
     end
 
 
