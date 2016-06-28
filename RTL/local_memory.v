@@ -49,6 +49,9 @@ module local_memory (MCLK, data, rdaddress, wraddress, wren, q);
                     .wren(wren),
                     .q(q_low));
 
+    defparam RAM_H.init_file = "rom_test_H.mif";
+    defparam RAM_L.init_file = "rom_test_L.mif";
+
     assign q_all = {q_high, q_low};
     assign q = q_all[0];
 
