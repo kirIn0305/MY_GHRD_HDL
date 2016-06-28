@@ -1,18 +1,9 @@
-task set_seed;
-input [7:0] value_seed;
-begin
-    rst = 1'b0;
-    seed = value_seed; 
-    @(posedge CLK) #DELAY;
-        seed = 8'bz; rst = 1'b1;
-end
-endtask
-
 task write_ram;
 input [7:0] value_address;
+input [18:0] value_data;
 begin
     wren = 1'b1;
-    data = 19'b3;
+    data = value_data;
     address = value_address;
     @(posedge CLK) #DELAY
         wren = 1'b0;
@@ -25,5 +16,6 @@ begin
     wren = 1'b0;
     address = value_address;
     @(posedge CLK) #DELAY
+        wren = 1'b0;
 end
 endtask

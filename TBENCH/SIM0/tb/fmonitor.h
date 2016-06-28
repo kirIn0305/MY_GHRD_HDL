@@ -1,10 +1,10 @@
 integer mcd;
 
 initial begin
-mcd = $fopen("lsfr.csv");
-$fstrobe(mcd, "time,lsfr");
+mcd = $fopen("mem.csv");
+$fstrobe(mcd, "time, q");
 end
 
 always @(posedge CLK) begin
-    $fdisplay(mcd,"%d,%h", $time, rand_out);
+    $fdisplay(mcd,"%d,%h", $time, q);
 end
