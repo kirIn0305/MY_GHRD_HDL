@@ -1,19 +1,57 @@
-# Reading pref.tcl
-# vsim -gui test_module 
-# Start time: 01:47:50 on Nov 05,2015
+# Reading C:/altera_lite/16.0/modelsim_ase/tcl/vsim/pref.tcl
+# vsim -L altera_mf -gui tbench 
+# Start time: 17:45:29 on Jun 28,2016
 # Loading sv_std.std
-# Loading work.test_module
-# Loading work.mod_top
-# Loading work.mod_a
-# Loading work.mod_b
+# Loading work.tbench
+# Loading work.local_memory
+# Loading work.sram_high
+# Loading altera_mf.altsyncram
+# Loading altera_mf.altsyncram_body
+# Loading altera_mf.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3015) ../../RTL/local_memory.v(36): [PCDPC] - Port size (3) does not match connection size (2) for port 'q'. The port definition is at: ../../RTL/sram_high.v(46).
+#    Time: 0 ps  Iteration: 0  Instance: /tbench/RAM_0/RAM_H File: ../../RTL/sram_high.v
 add wave -position insertpoint  \
-sim:/test_module/clk \
-sim:/test_module/rst_x \
-sim:/test_module/i_in \
-sim:/test_module/o_out
-run
-# ModelSim simulation sample
-run
-run
-# End time: 01:48:08 on Nov 05,2015, Elapsed time: 0:00:18
-# Errors: 0, Warnings: 0
+sim:/tbench/CLK \
+sim:/tbench/address \
+sim:/tbench/data \
+sim:/tbench/wren \
+sim:/tbench/q
+run -all
+# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "tmp.mif" for reading.
+# 
+# No such file or directory. (errno = ENOENT)    : altera_mf.v(188)
+#    Time: 0 ps  Iteration: 0  Instance: /tbench/RAM_0/RAM_H/altsyncram_component/m_default/altsyncram_inst
+# ERROR: cannot read tmp.mif.
+# ** Warning: (vsim-7) Failed to open readmem file "tmp.ver" in read mode.
+# 
+# No such file or directory. (errno = ENOENT)    : altera_mf.v(48544)
+#    Time: 0 ps  Iteration: 0  Instance: /tbench/RAM_0/RAM_H/altsyncram_component/m_default/altsyncram_inst
+# Simulaton done
+# ** Note: $finish    : ./tb/tbench.v(26)
+#    Time: 19600 ps  Iteration: 0  Instance: /tbench
+# 1
+# Break in Module tbench at ./tb/tbench.v line 26
+add wave -position insertpoint  \
+sim:/tbench/RAM_0/RAM_H/q
+restart
+# Closing VCD file "./test.vcd"
+# ** Warning: (vsim-3015) ../../RTL/local_memory.v(36): [PCDPC] - Port size (3) does not match connection size (2) for port 'q'. The port definition is at: ../../RTL/sram_high.v(46).
+#    Time: 0 ps  Iteration: 0  Instance: /tbench/RAM_0/RAM_H File: ../../RTL/sram_high.v
+run -all
+# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "tmp.mif" for reading.
+# 
+# No such file or directory. (errno = ENOENT)    : altera_mf.v(188)
+#    Time: 0 ps  Iteration: 0  Instance: /tbench/RAM_0/RAM_H/altsyncram_component/m_default/altsyncram_inst
+# ERROR: cannot read tmp.mif.
+# ** Warning: (vsim-7) Failed to open readmem file "tmp.ver" in read mode.
+# 
+# No such file or directory. (errno = ENOENT)    : altera_mf.v(48544)
+#    Time: 0 ps  Iteration: 0  Instance: /tbench/RAM_0/RAM_H/altsyncram_component/m_default/altsyncram_inst
+# Simulaton done
+# ** Note: $finish    : ./tb/tbench.v(26)
+#    Time: 19600 ps  Iteration: 0  Instance: /tbench
+# 1
+# Break in Module tbench at ./tb/tbench.v line 26
+# End time: 17:47:36 on Jun 28,2016, Elapsed time: 0:02:07
+# Errors: 0, Warnings: 6

@@ -7,100 +7,130 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-d/home/vacent/MY_GHRD_FPGA/HDL/SIM1
-vmod_a
-Z0 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
-Z1 !s110 1446655666
+Z0 dC:/home/kirIn-win/MY_GHRD_HDL/TBENCH/SIM1
+vlocal_memory
+Z1 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
+Z2 !s110 1467132327
 !i10b 1
-!s100 e?DERN:>TXX<GAPi@ojU82
-I4CeZ<Y;CO6kSBK7QIlk651
-Z2 V`JN@9S9cnhjKRR_L]QIcM3
-!s105 mod_a_v_unit
+!s100 :IYckICC6=KAkdU?OfQfa2
+IYUlnLW5n3U83g<EOY9ea60
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 local_memory_v_unit
 S1
-Z3 d/home/aurora/MY_GHRD_FPGA/HDL/TBENCH/SIM1
-Z4 w1421525641
-8../../RTL/mod_a.v
-F../../RTL/mod_a.v
-Z5 L0 42
-Z6 OV;L;10.3d;59
+R0
+w1467161080
+8../../RTL/local_memory.v
+F../../RTL/local_memory.v
+F../../RTL//global.h
+L0 15
+Z4 OV;L;10.4d;61
 r1
 !s85 0
 31
-Z7 !s108 1446655666.035259
-Z8 !s107 ./tb/tbench.v|
-Z9 !s90 +notimingchecks|-sv|-y|../../RTL|+incdir+../../RTL/+|+libext+.v+|./tb/tbench.v|
+Z5 !s108 1467132327.000000
+Z6 !s107 ../../RTL//global.h|tb/fmonitor.h|tb/task_ram.v|tb/instance_1.v|tb/clk_common.h|.\tb\..\..\..\RTL\global.h|./tb/tbench.v|../../RTL/sram_low.v|../../RTL/sram_high.v|../../RTL/lsfr.v|
+Z7 !s90 -work|work|-L|altera_mf|+notimingchecks|-sv|-v|../../RTL/local_memory.v|../../RTL/lsfr.v|../../RTL/sram_high.v|../../RTL/sram_low.v|+incdir+../../RTL/+|+libext+.v+|./tb/tbench.v|
 !i113 1
-Z10 o+notimingchecks -sv +libext+.v+
-Z11 !s92 +notimingchecks -sv -y ../../RTL +incdir+../../RTL/+ +libext+.v+
-vmod_b
-R0
+Z8 o-work work -L altera_mf +notimingchecks -sv +libext+.v+
+Z9 !s92 -work work -L altera_mf +notimingchecks -sv -v ../../RTL/local_memory.v +incdir+../../RTL/+ +libext+.v+
+vlsfr_eight
 R1
-!i10b 1
-!s100 oo7APc2l8RUNUkfnl:N<@1
-IZJJXl3gm6<8?dRinWfoQg2
 R2
-!s105 mod_b_v_unit
-S1
+!i10b 1
+!s100 XZ:7<RTa?4Yg1H?3JGk>b1
+I[JYXo=i^POgaD2iNkafHU2
 R3
+!s105 lsfr_v_unit
+S1
+R0
+w1466453982
+8../../RTL/lsfr.v
+F../../RTL/lsfr.v
+L0 12
 R4
-8../../RTL/mod_b.v
-F../../RTL/mod_b.v
+r1
+!s85 0
+31
 R5
 R6
+R7
+!i113 1
+R8
+R9
+vsram_high
+R1
+R2
+!i10b 1
+!s100 G5[;P00f8l@g_P]?]F9CW3
+IgVoDPSOV=V^<@NT_2Cn=d1
+R3
+!s105 sram_high_v_unit
+S1
+R0
+w1467156773
+8../../RTL/sram_high.v
+F../../RTL/sram_high.v
+Z10 L0 40
+R4
 r1
 !s85 0
 31
-R7
-R8
-R9
-!i113 1
-R10
-R11
-vmod_top
-R0
-R1
-!i10b 1
-!s100 zE>MP=bg3VY8fe@]Q_cGO3
-IeMbN_WG@ZWeG;TLalSoF62
-R2
-!s105 mod_top_v_unit
-S1
-R3
-R4
-8../../RTL/mod_top.v
-F../../RTL/mod_top.v
 R5
 R6
+R7
+!i113 1
+R8
+R9
+vsram_low
+R1
+R2
+!i10b 1
+!s100 D6bSQNCVoeg;N0DSz9oPV3
+I2bZ?71UZ7NJBK;[=J^:jW0
+R3
+!s105 sram_low_v_unit
+S1
+R0
+w1467156865
+8../../RTL/sram_low.v
+F../../RTL/sram_low.v
+R10
+R4
 r1
 !s85 0
 31
+R5
+R6
 R7
+!i113 1
 R8
 R9
-!i113 1
-R10
-R11
-vtest_module
-R0
+vtbench
 R1
-!i10b 1
-!s100 9<CknZV>X^em1I^gXQ]nO3
-IbeR=lJ07W>mGSogBnzlNo2
 R2
+!i10b 1
+!s100 JBMW163hzLd[J@n:;g<hQ3
+IaZ9S3h2>gDDj5cZBOiK<f2
+R3
 !s105 tbench_v_unit
 S1
-R3
-w1428108646
+R0
+w1467160978
 8./tb/tbench.v
 F./tb/tbench.v
-R5
-R6
+F.\tb\..\..\..\RTL\global.h
+Ftb/clk_common.h
+Ftb/instance_1.v
+Ftb/task_ram.v
+Ftb/fmonitor.h
+L0 3
+R4
 r1
 !s85 0
 31
+R5
+R6
 R7
+!i113 1
 R8
 R9
-!i113 1
-R10
-R11

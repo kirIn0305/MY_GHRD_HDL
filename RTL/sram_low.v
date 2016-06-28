@@ -4,7 +4,7 @@
 // MODULE: altsyncram 
 
 // ============================================================
-// File Name: sram_high.v
+// File Name: sram_low.v
 // Megafunction Name(s):
 // 			altsyncram
 //
@@ -37,7 +37,7 @@
 // synopsys translate_off
 `timescale 1 ps / 1 ps
 // synopsys translate_on
-module sram_high (
+module sram_low (
 	clock,
 	data,
 	rdaddress,
@@ -46,11 +46,11 @@ module sram_high (
 	q);
 
 	input	  clock;
-	input	[2:0]  data;
+	input	[15:0]  data;
 	input	[7:0]  rdaddress;
 	input	[7:0]  wraddress;
 	input	  wren;
-	output	[2:0]  q;
+	output	[15:0]  q;
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_off
 `endif
@@ -60,8 +60,8 @@ module sram_high (
 // synopsys translate_on
 `endif
 
-	wire [2:0] sub_wire0;
-	wire [2:0] q = sub_wire0[2:0];
+	wire [15:0] sub_wire0;
+	wire [15:0] q = sub_wire0[15:0];
 
 	altsyncram	altsyncram_component (
 				.address_a (wraddress),
@@ -81,7 +81,7 @@ module sram_high (
 				.clocken1 (1'b1),
 				.clocken2 (1'b1),
 				.clocken3 (1'b1),
-				.data_b ({3{1'b1}}),
+				.data_b ({16{1'b1}}),
 				.eccstatus (),
 				.q_a (),
 				.rden_a (1'b1),
@@ -93,7 +93,7 @@ module sram_high (
 		altsyncram_component.clock_enable_input_a = "BYPASS",
 		altsyncram_component.clock_enable_input_b = "BYPASS",
 		altsyncram_component.clock_enable_output_b = "BYPASS",
-		altsyncram_component.init_file = "tmp.mif",
+		altsyncram_component.init_file = "tmp_low.mif",
 		altsyncram_component.intended_device_family = "Cyclone V",
 		altsyncram_component.lpm_type = "altsyncram",
 		altsyncram_component.numwords_a = 256,
@@ -105,8 +105,8 @@ module sram_high (
 		altsyncram_component.read_during_write_mode_mixed_ports = "DONT_CARE",
 		altsyncram_component.widthad_a = 8,
 		altsyncram_component.widthad_b = 8,
-		altsyncram_component.width_a = 3,
-		altsyncram_component.width_b = 3,
+		altsyncram_component.width_a = 16,
+		altsyncram_component.width_b = 16,
 		altsyncram_component.width_byteena_a = 1;
 
 
@@ -145,9 +145,9 @@ endmodule
 // Retrieval info: PRIVATE: JTAG_ENABLED NUMERIC "0"
 // Retrieval info: PRIVATE: JTAG_ID STRING "NONE"
 // Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
-// Retrieval info: PRIVATE: MEMSIZE NUMERIC "768"
+// Retrieval info: PRIVATE: MEMSIZE NUMERIC "4096"
 // Retrieval info: PRIVATE: MEM_IN_BITS NUMERIC "0"
-// Retrieval info: PRIVATE: MIFfilename STRING "tmp.mif"
+// Retrieval info: PRIVATE: MIFfilename STRING "tmp_low.mif"
 // Retrieval info: PRIVATE: OPERATION_MODE NUMERIC "2"
 // Retrieval info: PRIVATE: OUTDATA_ACLR_B NUMERIC "0"
 // Retrieval info: PRIVATE: OUTDATA_REG_B NUMERIC "1"
@@ -165,10 +165,10 @@ endmodule
 // Retrieval info: PRIVATE: USE_DIFF_CLKEN NUMERIC "0"
 // Retrieval info: PRIVATE: UseDPRAM NUMERIC "1"
 // Retrieval info: PRIVATE: VarWidth NUMERIC "0"
-// Retrieval info: PRIVATE: WIDTH_READ_A NUMERIC "3"
-// Retrieval info: PRIVATE: WIDTH_READ_B NUMERIC "3"
-// Retrieval info: PRIVATE: WIDTH_WRITE_A NUMERIC "3"
-// Retrieval info: PRIVATE: WIDTH_WRITE_B NUMERIC "3"
+// Retrieval info: PRIVATE: WIDTH_READ_A NUMERIC "16"
+// Retrieval info: PRIVATE: WIDTH_READ_B NUMERIC "16"
+// Retrieval info: PRIVATE: WIDTH_WRITE_A NUMERIC "16"
+// Retrieval info: PRIVATE: WIDTH_WRITE_B NUMERIC "16"
 // Retrieval info: PRIVATE: WRADDR_ACLR_B NUMERIC "0"
 // Retrieval info: PRIVATE: WRADDR_REG_B NUMERIC "0"
 // Retrieval info: PRIVATE: WRCTRL_ACLR_B NUMERIC "0"
@@ -180,7 +180,7 @@ endmodule
 // Retrieval info: CONSTANT: CLOCK_ENABLE_INPUT_A STRING "BYPASS"
 // Retrieval info: CONSTANT: CLOCK_ENABLE_INPUT_B STRING "BYPASS"
 // Retrieval info: CONSTANT: CLOCK_ENABLE_OUTPUT_B STRING "BYPASS"
-// Retrieval info: CONSTANT: INIT_FILE STRING "tmp.mif"
+// Retrieval info: CONSTANT: INIT_FILE STRING "tmp_low.mif"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone V"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
 // Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "256"
@@ -192,25 +192,25 @@ endmodule
 // Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_MIXED_PORTS STRING "DONT_CARE"
 // Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "8"
 // Retrieval info: CONSTANT: WIDTHAD_B NUMERIC "8"
-// Retrieval info: CONSTANT: WIDTH_A NUMERIC "3"
-// Retrieval info: CONSTANT: WIDTH_B NUMERIC "3"
+// Retrieval info: CONSTANT: WIDTH_A NUMERIC "16"
+// Retrieval info: CONSTANT: WIDTH_B NUMERIC "16"
 // Retrieval info: CONSTANT: WIDTH_BYTEENA_A NUMERIC "1"
 // Retrieval info: USED_PORT: clock 0 0 0 0 INPUT VCC "clock"
-// Retrieval info: USED_PORT: data 0 0 3 0 INPUT NODEFVAL "data[2..0]"
-// Retrieval info: USED_PORT: q 0 0 3 0 OUTPUT NODEFVAL "q[2..0]"
+// Retrieval info: USED_PORT: data 0 0 16 0 INPUT NODEFVAL "data[15..0]"
+// Retrieval info: USED_PORT: q 0 0 16 0 OUTPUT NODEFVAL "q[15..0]"
 // Retrieval info: USED_PORT: rdaddress 0 0 8 0 INPUT NODEFVAL "rdaddress[7..0]"
 // Retrieval info: USED_PORT: wraddress 0 0 8 0 INPUT NODEFVAL "wraddress[7..0]"
 // Retrieval info: USED_PORT: wren 0 0 0 0 INPUT GND "wren"
 // Retrieval info: CONNECT: @address_a 0 0 8 0 wraddress 0 0 8 0
 // Retrieval info: CONNECT: @address_b 0 0 8 0 rdaddress 0 0 8 0
 // Retrieval info: CONNECT: @clock0 0 0 0 0 clock 0 0 0 0
-// Retrieval info: CONNECT: @data_a 0 0 3 0 data 0 0 3 0
+// Retrieval info: CONNECT: @data_a 0 0 16 0 data 0 0 16 0
 // Retrieval info: CONNECT: @wren_a 0 0 0 0 wren 0 0 0 0
-// Retrieval info: CONNECT: q 0 0 3 0 @q_b 0 0 3 0
-// Retrieval info: GEN_FILE: TYPE_NORMAL sram_high.v TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL sram_high.inc FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL sram_high.cmp FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL sram_high.bsf FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL sram_high_inst.v FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL sram_high_bb.v FALSE
+// Retrieval info: CONNECT: q 0 0 16 0 @q_b 0 0 16 0
+// Retrieval info: GEN_FILE: TYPE_NORMAL sram_low.v TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL sram_low.inc FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL sram_low.cmp FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL sram_low.bsf FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL sram_low_inst.v FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL sram_low_bb.v FALSE
 // Retrieval info: LIB_FILE: altera_mf
