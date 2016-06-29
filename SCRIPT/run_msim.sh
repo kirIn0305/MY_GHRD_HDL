@@ -29,6 +29,7 @@ fi
 # compile
 vlog \
     -work work \
+    -L altera_mf_ver \
     -L altera_mf \
     +notimingchecks \
     -sv \
@@ -40,7 +41,7 @@ vlog \
 # simulation
 if [ "$2" = "-nogui" ]; then 
 ## if you use on CUI
-vsim -L altera_mf -c -keepstdout tbench -do "radix -hexadecimal; log -r /*; run -all; finish" 
+vsim -L altera_mf_ver -L altera_mf -c -keepstdout tbench -do "radix -hexadecimal; log -r /*; run -all; finish" 
 #fi
 #vsim -c -keepstdout test_module <<EOF
 elif [ "$2" = "-gui" ]; then
